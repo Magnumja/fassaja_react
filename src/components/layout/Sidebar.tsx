@@ -10,6 +10,7 @@ import {
   X,
   Home,
 } from 'lucide-react';
+import { Logo } from '@/components/common/Logo';
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,10 +48,11 @@ export const Sidebar: React.FC = () => {
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="px-6 py-8">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-dark to-primary-vibrant bg-clip-text text-transparent">
+          <div className="px-6 py-6 flex items-center gap-3">
+            <Logo size="md" showImage={true} />
+            <span className="text-lg font-bold text-primary-dark hidden sm:inline">
               Fassaja
-            </h1>
+            </span>
           </div>
 
           {/* Navigation */}
