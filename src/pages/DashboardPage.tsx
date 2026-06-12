@@ -6,6 +6,8 @@ import { ProgressCard } from '@/components/dashboard/ProgressCard';
 import { TaskCard } from '@/components/tasks/TaskCard';
 import { Card } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
+import { Mascot } from '@/components/mascot/Mascot';
+import { MascotMessage } from '@/components/mascot/MascotMessage';
 import { useTasks } from '@/hooks/useTasks';
 import { useDashboardStats } from '@/hooks/useDashboardStats';
 import { mockUser } from '@/data/mockUser';
@@ -153,23 +155,17 @@ const DashboardPage: React.FC = () => {
           </div>
         </Card>
 
-        {/* Help */}
-        <Card className="bg-gradient-to-br from-primary-light to-blue-50">
-          <div className="flex items-start gap-4">
-            <div className="text-4xl">🤖</div>
-            <div>
-              <h3 className="text-lg font-bold text-primary-dark mb-2">
-                Precisa de ajuda?
-              </h3>
-              <p className="text-sm text-primary-dark opacity-80 mb-4">
-                Fale conosco no chat de suporte. Estamos aqui para ajudar!
-              </p>
-              <Button size="sm" variant="primary">
-                Fale conosco
-              </Button>
-            </div>
-          </div>
-        </Card>
+        {/* Help - Mascot Message */}
+        <MascotMessage
+          state="confused"
+          title="Precisa de ajuda?"
+          message="Fale conosco no chat de suporte. Estamos aqui para ajudar você a ser mais produtivo!"
+          mascotSize="md"
+          action={{
+            label: 'Fale conosco',
+            onClick: () => alert('Chat de suporte em breve!'),
+          }}
+        />
       </div>
     </AppLayout>
   );

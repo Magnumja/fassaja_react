@@ -1,0 +1,50 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Body -->
+  <rect x="40" y="50" width="120" height="140" rx="12" fill="white" stroke="#061B49" stroke-width="5"/>
+
+  <!-- Presilha (handle) -->
+  <rect x="75" y="35" width="50" height="20" rx="8" fill="#2477FF" stroke="#061B49" stroke-width="3"/>
+
+  <!-- Checks on body -->
+  <g stroke="#2477FF" stroke-width="4" fill="none" stroke-linecap="round">
+    <!-- Check 1 -->
+    <line x1="60" y1="100" x2="75" y2="115"/>
+    <line x1="75" y1="115" x2="105" y2="85"/>
+  </g>
+
+  <!-- Empty checkbox -->
+  <rect x="60" y="140" width="30" height="30" rx="4" fill="none" stroke="#2477FF" stroke-width="3"/>
+
+  <!-- Eyes (confused/worried) -->
+  <circle cx="70" cy="85" r="5" fill="#061B49"/>
+  <path d="M 125 80 Q 130 85 135 80" stroke="#061B49" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Confused mouth (straight line) -->
+  <line x1="75" y1="115" x2="125" y2="115" stroke="#061B49" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Left leg -->
+  <rect x="55" y="190" width="12" height="35" rx="6" fill="#061B49"/>
+
+  <!-- Right leg -->
+  <rect x="133" y="190" width="12" height="35" rx="6" fill="#061B49"/>
+
+  <!-- Left arm with question mark -->
+  <g>
+    <line x1="40" y1="110" x2="10" y2="95" stroke="#061B49" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 8 75 Q 5 65 8 55" stroke="#2477FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="8" cy="50" r="2.5" fill="#2477FF"/>
+  </g>
+
+  <!-- Right arm with question mark -->
+  <g>
+    <line x1="160" y1="110" x2="190" y2="95" stroke="#061B49" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 192 75 Q 195 65 192 55" stroke="#2477FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="192" cy="50" r="2.5" fill="#2477FF"/>
+  </g>
+
+  <!-- Question marks floating -->
+  <g font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2477FF">
+    <text x="25" y="45">?</text>
+    <text x="165" y="55">?</text>
+  </g>
+</svg>
