@@ -6,6 +6,7 @@ import { ProgressCard } from '@/components/dashboard/ProgressCard';
 import { TaskCard } from '@/components/tasks/TaskCard';
 import { Card } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
+import { EmptyState } from '@/components/common/EmptyState';
 import { Mascot } from '@/components/mascot/Mascot';
 import { MascotMessage } from '@/components/mascot/MascotMessage';
 import { useTasks } from '@/hooks/useTasks';
@@ -108,11 +109,11 @@ const DashboardPage: React.FC = () => {
 
         {/* Upcoming Tasks */}
         <div className="lg:col-span-2">
-          <Card>
-            <h3 className="text-lg font-bold text-text-primary mb-4">
-              Próximas Tarefas
-            </h3>
-            {upcomingTasks.length > 0 ? (
+          {upcomingTasks.length > 0 ? (
+            <Card>
+              <h3 className="text-lg font-bold text-text-primary mb-4">
+                Próximas Tarefas
+              </h3>
               <div className="space-y-3">
                 {upcomingTasks.map(task => (
                   <TaskCard
@@ -123,15 +124,18 @@ const DashboardPage: React.FC = () => {
                   />
                 ))}
               </div>
-            ) : (
-              <div className="text-center py-8">
-                <div className="text-4xl mb-3">✨</div>
-                <p className="text-text-secondary">
-                  Nenhuma tarefa pendente! Você está em dia.
-                </p>
-              </div>
-            )}
-          </Card>
+            </Card>
+          ) : (
+            <EmptyState
+              mascotState="happy"
+              title="Nenhuma tarefa pendente!"
+              description="Você está em dia com todas as suas tarefas. Aproveite e crie novas metas!"
+              action={{
+                label: 'Nova Tarefa',
+                onClick: () => setShowNewTaskModal(true),
+              }}
+            />
+          )}
         </div>
       </div>
 

@@ -17,11 +17,11 @@ const sizeClasses = {
 };
 
 const mascotImages: Record<MascotState, string> = {
-  happy: '/mascot-happy.svg',
-  strong: '/mascot-strong.svg',
-  confused: '/mascot-confused.svg',
-  sad: '/mascot-sad.svg',
-  error: '/mascot-404.svg',
+  happy: '/bobjoia.png',
+  strong: '/bobforte.png',
+  confused: '/bobduvida.png',
+  sad: '/bobtriste.png',
+  error: '/boberror404.png',
 };
 
 export const Mascot: React.FC<MascotProps> = ({
@@ -40,7 +40,7 @@ export const Mascot: React.FC<MascotProps> = ({
       <img
         src={imageSrc}
         alt={`Mascot ${state}`}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-contain drop-shadow-lg"
       />
     </motion.div>
   );
