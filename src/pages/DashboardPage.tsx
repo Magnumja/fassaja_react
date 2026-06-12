@@ -7,6 +7,7 @@ import { TaskCard } from '@/components/tasks/TaskCard';
 import { Card } from '@/components/common/Card';
 import { Button } from '@/components/common/Button';
 import { EmptyState } from '@/components/common/EmptyState';
+import { CreateTaskModal } from '@/components/tasks/CreateTaskModal';
 import { Mascot } from '@/components/mascot/Mascot';
 import { MascotMessage } from '@/components/mascot/MascotMessage';
 import { useTasks } from '@/hooks/useTasks';
@@ -14,7 +15,7 @@ import { useDashboardStats } from '@/hooks/useDashboardStats';
 import { mockUser } from '@/data/mockUser';
 
 const DashboardPage: React.FC = () => {
-  const { tasks, completeTask, deleteTask } = useTasks();
+  const { tasks, completeTask, deleteTask, createTask } = useTasks();
   const stats = useDashboardStats(tasks);
   const [showNewTaskModal, setShowNewTaskModal] = useState(false);
 
@@ -37,7 +38,14 @@ const DashboardPage: React.FC = () => {
   };
 
   return (
-    <AppLayout onNewTask={() => setShowNewTaskModal(true)}>
+    <>
+      <CreateTaskModal
+        isOpen={showNewTaskModal}
+        onClose={() => setShowNewTaskModal(false)}
+        onCreateTask={createTask}
+      />
+
+      <AppLayout onNewTask={() => setShowNewTaskModal(true)}>
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-text-primary mb-2">
@@ -172,6 +180,7 @@ const DashboardPage: React.FC = () => {
         />
       </div>
     </AppLayout>
+    </>
   );
 };
 
