@@ -1,0 +1,20 @@
+{
+  "name": "fassaja",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fassaja monorepo - front-end React + back-end NestJS",
+  "scripts": {
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "db:setup": "npm --prefix backend run prisma:generate && npm --prefix backend exec prisma migrate deploy && npm --prefix backend run prisma:seed",
+    "dev": "concurrently -n backend,frontend -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "concurrently -n backend,frontend -c blue,magenta \"npm:build:backend\" \"npm:build:frontend\"",
+    "build:backend": "npm --prefix backend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
